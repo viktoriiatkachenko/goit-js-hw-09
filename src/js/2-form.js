@@ -48,15 +48,12 @@ function onFormInput(event) {
 function onFormSubmit(event) {
   event.preventDefault();
 
-  const email = formData.email.trim();
-  const message = formData.message.trim();
-
-  if (!email || !message) {
+  if (!formData.email || !formData.message) {
     alert('Fill please all fields');
     return;
   }
 
-  console.log({ email, message });
+  console.log(formData);
 
   localStorage.removeItem(STORAGE_KEY);
 
